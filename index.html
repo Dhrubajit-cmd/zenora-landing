@@ -3,31 +3,40 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zenora</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    <!-- BACKGROUND -->
-    <div class="background"></div>
+    <!-- Cursor Glow -->
     <div class="cursor-glow"></div>
+
+    <!-- Background -->
+    <div class="background"></div>
+
     <!-- NAV -->
     <nav>
         <h1>Zenora</h1>
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero reveal">
 
         <h1>Your Money Is Talking.<br>Zenora Helps You Understand It.</h1>
         <p>AI-powered financial intelligence that turns your spending into clarity.</p>
 
         <button id="openModal" class="cta-btn">Join Waitlist</button>
 
-        <!-- MOCK DASHBOARD -->
+        <!-- Dashboard -->
         <div class="dashboard">
+
             <div class="glass-card">
                 <h3>₹12,450</h3>
                 <p>Monthly Spending</p>
@@ -39,15 +48,16 @@
             </div>
 
             <div class="glass-card">
-                <h3>📊 Insights</h3>
-                <p>You spend 23% more on weekends</p>
+                <h3>Spending Trend</h3>
+                <canvas id="chart"></canvas>
             </div>
+
         </div>
 
     </section>
 
     <!-- FEATURES -->
-    <section class="features">
+    <section class="features reveal">
 
         <div class="feature">
             <h3>Add Expenses Instantly</h3>
@@ -65,15 +75,21 @@
         </div>
 
         <div class="feature">
-            <h3>Import/Export</h3>
-            <p>Seamless spreadsheet integration.</p>
+            <h3>Import / Export</h3>
+            <p>Seamlessly sync with spreadsheets.</p>
         </div>
 
     </section>
 
+    <!-- CTA -->
+    <section class="section reveal">
+        <h2>Take Control of Your Financial Future</h2>
+        <button id="openModal" class="cta-btn">Join Waitlist</button>
+    </section>
+
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Zenora</p>
+        <p>© 2026 Zenora. All rights reserved.</p>
     </footer>
 
     <!-- MODAL -->
@@ -83,18 +99,24 @@
             <span id="closeModal">&times;</span>
 
             <h2>Request Access</h2>
+            <p>Join early users building smarter financial habits.</p>
 
             <input placeholder="Your Name">
             <input placeholder="Email">
+
             <select>
                 <option>Select Industry</option>
+                <option>Student</option>
+                <option>Working Professional</option>
+                <option>Business</option>
             </select>
 
-            <button>Request Access</button>
+            <button onclick="saveUser()">Request Access</button>
 
         </div>
     </div>
 
+    <!-- JS -->
     <script src="scripts/main.js"></script>
 
 </body>
