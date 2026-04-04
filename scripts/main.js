@@ -1,35 +1,61 @@
-const openBtn = document.getElementById("openModal");
+// =====================
+// MODAL HANDLING (FIXED)
+// =====================
+
+// Support MULTIPLE buttons
+const openBtns = document.querySelectorAll("#openModal");
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("closeModal");
 
-openBtn.onclick = () => {
-    modal.classList.remove("hidden");
+openBtns.forEach(btn => {
+    btn.onclick = () => {
+        modal.classList.remove("hidden");
+    };
+});
+
+if (closeBtn) {
+    closeBtn.onclick = () => {
+        modal.classList.add("hidden");
+    };
+}
+
+// Close when clicking outside modal
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.classList.add("hidden");
+    }
 };
 
-closeBtn.onclick = () => {
-    modal.classList.add("hidden");
-};
+// =====================
+// CURSOR GLOW (SAFE)
+// =====================
 
 const glow = document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", (e) => {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-});
-const ctx = document.getElementById('chart');
+if (glow) {
+    document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+    });
+}
+
+// =====================
+// CHART (SAFE INIT)
+// =====================
+
+const ctx = document.getElementById("chart");
 
 if (ctx) {
     new Chart(ctx, {
-        type: 'line',
+        type: "line",
         data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
             datasets: [{
-                label: 'Spending',
                 data: [200, 400, 300, 600, 800, 1200, 900],
-                borderColor: '#6366f1',
+                borderColor: "#1e3a8a",
                 tension: 0.4,
                 fill: true,
-                backgroundColor: 'rgba(99,102,241,0.2)'
+                backgroundColor: "rgba(30,58,138,0.1)"
             }]
         },
         options: {
@@ -42,24 +68,47 @@ if (ctx) {
     });
 }
 
+// =====================
+// SCROLL REVEAL (IMPROVED)
+// =====================
+
 const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+
     reveals.forEach(el => {
         const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
+
+        if (top < windowHeight - 100) {
             el.classList.add("active");
         }
     });
-});
+}
+
+// Run once on load
+revealOnScroll();
+
+// Run on scroll
+window.addEventListener("scroll", revealOnScroll);
+
+// =====================
+// WAITLIST STORAGE
+// =====================
 
 function saveUser() {
     const inputs = document.querySelectorAll(".modal-content input");
 
-    const user = {
-        name: inputs[0].value,
-        email: inputs[1].value
-    };
+    const name = inputs[0].value.trim();
+    const email = inputs[1].value.trim();
+
+    // Basic validation
+    if (!name || !email) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    const user = { name, email };
 
     let users = JSON.parse(localStorage.getItem("zenora_users")) || [];
     users.push(user);
@@ -67,4 +116,10 @@ function saveUser() {
     localStorage.setItem("zenora_users", JSON.stringify(users));
 
     alert("You're on the waitlist 🚀");
+
+    // Clear inputs
+    inputs.forEach(input => input.value = "");
+
+    // Close modal
+    modal.classList.add("hidden");
 }
