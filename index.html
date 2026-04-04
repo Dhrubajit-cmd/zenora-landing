@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zenora - AI Finance Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Zenora</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #0b0f19;
-            color: #ffffff;
+            background: #0a0f1c;
+            color: white;
+            line-height: 1.6;
         }
 
         .container {
@@ -29,91 +31,136 @@
         }
 
         nav h1 {
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 22px;
+            font-weight: 700;
         }
 
         .hero {
             text-align: center;
-            margin-top: 80px;
+            padding: 100px 20px;
         }
 
         .hero h2 {
-            font-size: 48px;
+            font-size: 52px;
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
         .hero p {
             font-size: 18px;
             color: #aaa;
+            max-width: 600px;
+            margin: auto;
             margin-bottom: 30px;
         }
 
         .btn {
-            background: #4f46e5;
-            padding: 12px 24px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 14px 28px;
+            border-radius: 10px;
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
         }
 
         .features {
-            margin-top: 100px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            margin-top: 40px;
         }
 
         .card {
             background: #111827;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .footer {
             text-align: center;
-            margin-top: 100px;
+            padding: 40px;
             color: #666;
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
 
         <nav>
             <h1>Zenora</h1>
         </nav>
 
+        <!-- HERO -->
         <section class="hero">
-            <h2>AI-Powered Financial Intelligence</h2>
-            <p>Understand your spending. Optimize your life. Let AI guide your financial decisions.</p>
-            <a href="#" class="btn">Coming Soon</a>
+            <h2>Understand Your Money.<br>Master Your Future.</h2>
+            <p>Zenora uses AI to analyze your financial behavior and help you make smarter, data-driven money decisions.
+            </p>
+            <a href="#" class="btn">Join Waitlist</a>
         </section>
 
-        <section class="features">
-            <div class="card">
-                <h3>Smart Categorization</h3>
-                <p>Automatically classify your expenses using AI.</p>
-            </div>
+        <!-- PROBLEM -->
+        <section class="section">
+            <h3>Most People Don’t Understand Their Money</h3>
+            <p>Expenses go unnoticed. Habits go unchecked. Financial decisions are made blindly.</p>
+        </section>
 
-            <div class="card">
-                <h3>Behavior Insights</h3>
-                <p>Understand your financial habits deeply.</p>
-            </div>
+        <!-- SOLUTION -->
+        <section class="section">
+            <h3>Zenora Changes That</h3>
+            <p>We turn your financial data into clear, actionable intelligence using AI.</p>
+        </section>
 
-            <div class="card">
-                <h3>Personalized Suggestions</h3>
-                <p>Get tailored financial advice powered by data.</p>
+        <!-- FEATURES -->
+        <section class="section">
+            <h3>What Zenora Does</h3>
+
+            <div class="features">
+                <div class="card">
+                    <h4>Smart Expense Tracking</h4>
+                    <p>Automatically categorize and analyze your spending.</p>
+                </div>
+
+                <div class="card">
+                    <h4>Behavior Insights</h4>
+                    <p>Understand your habits and patterns deeply.</p>
+                </div>
+
+                <div class="card">
+                    <h4>AI Recommendations</h4>
+                    <p>Get personalized suggestions to improve your finances.</p>
+                </div>
             </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <h3>Be Among the First to Experience Zenora</h3>
+            <a href="#" class="btn">Join Waitlist</a>
         </section>
 
         <div class="footer">
-            <p>© 2026 Zenora. All rights reserved.</p>
+            <p>© 2026 Zenora. Built with vision.</p>
         </div>
 
     </div>
+
 </body>
 
 </html>
