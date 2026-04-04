@@ -138,13 +138,21 @@ body {
 }
 
 .blog-btn {
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 14px 28px;
+    border-radius: 30px;
     border: 1px solid #cbd5e1;
-    background: white;
+    background: #ffffff;
+    color: #1e3a8a;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+/* HOVER */
 .blog-btn:hover {
-    background: #f1f5f9;
+    background: linear-gradient(135deg, #1e3a8a, #fbbf24);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
