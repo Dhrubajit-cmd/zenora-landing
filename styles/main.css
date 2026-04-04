@@ -77,3 +77,108 @@ body {
     padding: 30px;
     border-radius: 20px;
 }
+
+/* CURSOR GLOW */
+.cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* GRID BACKGROUND */
+.background {
+    background:
+        radial-gradient(circle at center, rgba(99, 102, 241, 0.15), transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* GLASS CARDS */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(99, 102, 241, 0.6);
+}
+
+/* FLOAT ANIMATION */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.glass-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+.glass-card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.glass-card:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* PREMIUM BUTTON */
+.cta-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px;
+    background: linear-gradient(120deg, #6366f1, #8b5cf6, #06b6d4);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+}
+
+.cta-btn:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+}
+
+/* MODAL ANIMATION */
+.modal-content {
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
