@@ -105,3 +105,46 @@ body {
     border-radius: 16px;
     width: 300px;
 }
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* LEFT */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 35px;
+    height: 35px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* RIGHT */
+.nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+.blog-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    cursor: pointer;
+}
+
+.blog-btn:hover {
+    background: #f1f5f9;
+}
