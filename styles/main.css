@@ -239,3 +239,30 @@ body {
 .last-updated {
     color: #94a3b8;
 }
+
+/* POLICY PAGES (Privacy + Terms) */
+.policy-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.policy-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.policy-container h2 {
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.policy-container p,
+.policy-container li {
+    color: #475569;
+}
+
+.last-updated {
+    color: #94a3b8;
+}
