@@ -2,197 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
     <title>Zenora</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at top, #0f172a, #020617);
-            color: white;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        nav h1 {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: #6366f1;
-            filter: blur(120px);
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-        }
-
-        .hero h2 {
-            font-size: 56px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #aaa;
-            max-width: 600px;
-            margin: auto;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            padding: 14px 32px;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .section h3 {
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
-
-        .section p {
-            color: #aaa;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(99, 102, 241, 0.5);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- NAV -->
+    <nav class="nav">
+        <h1>Zenora</h1>
+    </nav>
 
-        <nav>
-            <h1>Zenora</h1>
-        </nav>
-
-        <!-- HERO -->
-        <section class="hero">
-            <h2>Understand Your Money.<br>Master Your Future.</h2>
-            <p>Zenora uses AI to analyze your financial behavior and help you make smarter, data-driven money decisions.
-            </p>
-            <a href="#" class="btn">Join Waitlist</a>
-        </section>
-
-        <!-- PROBLEM -->
-        <section class="section">
-            <h3>Most People Don’t Understand Their Money</h3>
-            <p>Expenses go unnoticed. Habits go unchecked. Financial decisions are made blindly.</p>
-        </section>
-
-        <!-- SOLUTION -->
-        <section class="section">
-            <h3>Zenora Changes That</h3>
-            <p>We turn your financial data into clear, actionable intelligence using AI.</p>
-        </section>
-
-        <!-- FEATURES -->
-        <section class="section">
-            <h3>What Zenora Does</h3>
-
-            <div class="features">
-                <div class="card">
-                    <h4>Smart Expense Tracking</h4>
-                    <p>Automatically categorize and analyze your spending.</p>
-                </div>
-
-                <div class="card">
-                    <h4>Behavior Insights</h4>
-                    <p>Understand your habits and patterns deeply.</p>
-                </div>
-
-                <div class="card">
-                    <h4>AI Recommendations</h4>
-                    <p>Get personalized suggestions to improve your finances.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section">
-            <h3>Be Among the First to Experience Zenora</h3>
-            <a href="#" class="btn">Join Waitlist</a>
-        </section>
-
-        <div class="footer">
-            <p>© 2026 Zenora. Built with vision.</p>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Understand Your Money.<br>Master Your Future.</h1>
+            <p>AI-powered financial intelligence for smarter decisions.</p>
+            <button>Join Waitlist</button>
         </div>
 
-    </div>
+        <div class="hero-visual">
+            <div class="mock-card">📊 Smart Dashboard Preview</div>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section">
+        <h2>Finance is Broken</h2>
+        <p>People don’t understand their spending or behavior.</p>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section">
+        <h2>Zenora Fixes That</h2>
+        <p>AI turns your financial data into insights.</p>
+    </section>
 
 </body>
 
 </html>
-
-<!--- THis is a comment -->
