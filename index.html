@@ -12,9 +12,9 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background: #0a0f1c;
+            background: radial-gradient(circle at top, #0f172a, #020617);
             color: white;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -33,15 +33,30 @@
         nav h1 {
             font-size: 22px;
             font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #6366f1;
+            filter: blur(120px);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
         }
 
         .hero h2 {
-            font-size: 52px;
+            font-size: 56px;
             font-weight: 700;
             margin-bottom: 20px;
         }
@@ -56,11 +71,17 @@
 
         .btn {
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            padding: 14px 28px;
-            border-radius: 10px;
+            padding: 14px 32px;
+            border-radius: 12px;
             color: white;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
         .section {
@@ -69,26 +90,35 @@
         }
 
         .section h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            color: #aaa;
+            max-width: 600px;
+            margin: auto;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
         }
 
         .card {
-            background: #111827;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
             padding: 25px;
-            border-radius: 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.5);
         }
 
         .footer {
