@@ -6,49 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zenora</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
-
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    <!-- Cursor Glow -->
-    <div class="cursor-glow"></div>
-
-    <!-- Background -->
-    <div class="background"></div>
-
     <!-- NAV -->
-    <nav>
-        <h1>Zenora</h1>
+    <nav class="nav">
+        <h1 class="logo">Zenora</h1>
     </nav>
 
     <!-- HERO -->
-    <section class="hero reveal">
+    <section class="hero">
 
-        <h1>Your Money Is Talking.<br>Zenora Helps You Understand It.</h1>
-        <p>AI-powered financial intelligence that turns your spending into clarity.</p>
+        <h1>Your Finance Management<br>at Fingertips</h1>
+        <p>Track, analyze and optimize your financial life with real-time intelligence.</p>
 
         <button id="openModal" class="cta-btn">Join Waitlist</button>
 
-        <!-- Dashboard -->
+        <!-- DASHBOARD -->
         <div class="dashboard">
 
-            <div class="glass-card">
+            <div class="card">
                 <h3>₹12,450</h3>
                 <p>Monthly Spending</p>
             </div>
 
-            <div class="glass-card">
+            <div class="card">
                 <h3>⚠ Overspending</h3>
-                <p>Food category spike</p>
+                <p>Food expenses rising</p>
             </div>
 
-            <div class="glass-card">
-                <h3>Spending Trend</h3>
+            <div class="card">
                 <canvas id="chart"></canvas>
             </div>
 
@@ -57,33 +47,33 @@
     </section>
 
     <!-- FEATURES -->
-    <section class="features reveal">
+    <section class="features">
 
         <div class="feature">
             <h3>Add Expenses Instantly</h3>
-            <p>No hassle. Just log and move on.</p>
+            <p>No hustle. Just log your expenses in seconds.</p>
         </div>
 
         <div class="feature">
             <h3>Real-Time Insights</h3>
-            <p>Prevent emotional overspending with smart alerts.</p>
+            <p>Get alerts before overspending happens.</p>
         </div>
 
         <div class="feature">
-            <h3>Visual Graphs</h3>
-            <p>Understand where your money goes.</p>
+            <h3>Smart Graphs</h3>
+            <p>Visualize your money flow clearly.</p>
         </div>
 
         <div class="feature">
             <h3>Import / Export</h3>
-            <p>Seamlessly sync with spreadsheets.</p>
+            <p>Seamlessly integrate with spreadsheets.</p>
         </div>
 
     </section>
 
     <!-- CTA -->
-    <section class="section reveal">
-        <h2>Take Control of Your Financial Future</h2>
+    <section class="cta">
+        <h2>Start managing your finances smarter today</h2>
         <button id="openModal" class="cta-btn">Join Waitlist</button>
     </section>
 
@@ -108,7 +98,6 @@
                 <option>Select Industry</option>
                 <option>Student</option>
                 <option>Working Professional</option>
-                <option>Business</option>
             </select>
 
             <button onclick="saveUser()">Request Access</button>
@@ -116,7 +105,6 @@
         </div>
     </div>
 
-    <!-- JS -->
     <script src="scripts/main.js"></script>
 
 </body>
