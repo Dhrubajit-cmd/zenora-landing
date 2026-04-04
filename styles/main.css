@@ -29,16 +29,10 @@ body {
     color: #475569;
 }
 
-/* BUTTON */
 .cta-btn {
-    margin-top: 20px;
-    padding: 14px 30px;
-    border-radius: 30px;
-    border: none;
     background: linear-gradient(135deg, #1e3a8a, #fbbf24);
     color: white;
-    cursor: pointer;
-    transition: 0.3s;
+    border: none;
 }
 
 .cta-btn:hover {
@@ -155,4 +149,16 @@ body {
     border-color: transparent;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
