@@ -73,29 +73,42 @@ await transporter.sendMail({
     to: email,
     subject: "You're on the Zenora Waitlist 🚀",
     html: `
-        <div style="font-family: Inter, sans-serif; padding: 20px;">
-            <h2 style="color: #1e3a8a;">Welcome to Zenora 🚀</h2>
+    <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:20px;">
+        
+        <div style="max-width:600px; margin:auto; background:white; padding:30px; border-radius:12px;">
             
-            <p>Hi ${name},</p>
-            
-            <p>Thank you for joining the Zenora waitlist.</p>
-            
-            <p>
-                We're building a smarter way to manage your finances — 
+            <h2 style="color:#1e3a8a; margin-bottom:10px;">Welcome to Zenora 🚀</h2>
+
+            <p style="color:#334155;">Hi ${name},</p>
+
+            <p style="color:#475569;">
+                Thank you for joining the Zenora waitlist.
+            </p>
+
+            <p style="color:#475569;">
+                We're building a smarter way to manage your finances —
                 with real-time insights, intelligent alerts, and seamless tracking.
             </p>
-            
-            <p>
+
+            <p style="color:#475569;">
                 Our product is launching soon, and you'll be among the first to get access.
             </p>
-            
-            <p style="margin-top: 20px;">
+
+            <p style="margin-top:20px; color:#475569;">
                 Thank you for your patience and support ❤️
             </p>
 
-            <p>
+            <p style="margin-top:25px; font-weight:600;">
                 — Team Zenora
             </p>
+
+            <div style="margin-top:20px; text-align:center;">
+                <img src="https://zenoraapp.in/assets/logo.png" 
+                     alt="Zenora Logo" 
+                     style="width:120px; opacity:0.9;">
+            </div>
+
         </div>
+    </div>
     `
 });
