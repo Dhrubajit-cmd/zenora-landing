@@ -65,43 +65,50 @@ Time: ${new Date().toLocaleString()}`
         await transporter.sendMail({
             from: `"Zenora" <${process.env.EMAIL_USER}>`,
             to: email,
-            subject: "You're on the Zenora Waitlist 🚀",
+            subject: "You're on the Zenora Waitlist",
             html: `
-            <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:20px;">
-                
-                <div style="max-width:600px; margin:auto; background:white; padding:30px; border-radius:12px;">
-                    
-                    <h2 style="color:#1e3a8a;">Welcome to Zenora 🚀</h2>
-
-                    <p>Hi ${name},</p>
-
-                    <p>Thank you for joining the Zenora waitlist.</p>
-
-                    <p>
-                        We're building a smarter way to manage your finances —
-                        with real-time insights and intelligent alerts.
-                    </p>
-
-                    <p>
-                        Our product is launching soon, and you'll be among the first to get access.
-                    </p>
-
-                    <p style="margin-top:20px;">
-                        Thank you for your patience ❤️
-                    </p>
-
-                    <p style="margin-top:25px; font-weight:600;">
-                        — Team Zenora
-                    </p>
-
-                    <div style="margin-top:20px; text-align:center;">
-                        <img src="https://zenoraapp.in/assets/logo.png" 
-                             style="width:120px;">
-                    </div>
-
-                </div>
+    <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:20px;">
+        
+        <div style="max-width:600px; margin:auto; background:white; padding:30px; border-radius:12px;">
+            
+            <!-- HEADER WITH LOGO -->
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                <img src="https://zenoraapp.in/assets/logo.png" 
+                     style="width:28px; height:28px;">
+                <h2 style="color:#1e3a8a; margin:0;">
+                    Welcome to Zenora
+                </h2>
             </div>
-            `
+
+            <p style="color:#334155;">Hi ${name},</p>
+
+            <p style="color:#475569;">
+                Thank you for joining the Zenora waitlist.
+            </p>
+
+            <p style="color:#475569;">
+                We're building a smarter way to manage your finances —
+                with real-time insights, intelligent alerts, and seamless tracking.
+            </p>
+
+            <p style="color:#475569;">
+                Our product is launching soon, and you'll be among the first to get access.
+            </p>
+
+            <p style="margin-top:20px; color:#475569;">
+                Thank you for your patience and support.
+            </p>
+
+            <!-- SIGNATURE WITH LOGO -->
+            <div style="margin-top:30px; display:flex; align-items:center; gap:8px;">
+                <span style="font-weight:600;">— Team Zenora</span>
+                <img src="https://zenoraapp.in/assets/logo.png" 
+                     style="width:20px; height:20px;">
+            </div>
+
+        </div>
+    </div>
+    `
         });
 
         res.status(200).json({ success: true });
