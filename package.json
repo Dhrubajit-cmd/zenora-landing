@@ -1,0 +1,24 @@
+{
+  "name": "zenora-landing",
+  "version": "1.0.0",
+  "description": "This is the landing page for Zenora",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhrubajit-cmd/zenora-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dhrubajit-cmd/zenora-landing/issues"
+  },
+  "homepage": "https://github.com/Dhrubajit-cmd/zenora-landing#readme",
+  "dependencies": {
+    "nodemailer": "^8.0.4"
+  }
+}
