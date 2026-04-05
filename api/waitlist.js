@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
             await sheets.spreadsheets.values.append({
                 spreadsheetId: process.env.SHEET_ID,
-                range: "Zenora Waitlist!A:C",
+                range: "Sheet1!A:C",
                 valueInputOption: "RAW",
                 requestBody: {
                     values: [[name, email, new Date().toLocaleString()]],
