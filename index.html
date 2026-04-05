@@ -17,7 +17,6 @@
 
     <!-- NAVBAR -->
     <nav class="nav">
-
         <div class="nav-left">
             <img src="/assets/logo.png" class="logo-img" alt="Zenora Logo">
             <h1 class="logo-text">Zenora</h1>
@@ -27,12 +26,10 @@
             <button class="blog-btn">Blog</button>
             <button id="openModal" class="cta-btn">Join Waitlist</button>
         </div>
-
     </nav>
 
     <!-- HERO -->
     <section class="hero reveal">
-
         <h1>Your Finance Management<br>at Fingertips</h1>
         <p>Track, analyze and optimize your financial life with real-time intelligence.</p>
 
@@ -40,7 +37,6 @@
 
         <!-- DASHBOARD -->
         <div class="dashboard">
-
             <div class="card">
                 <h3>₹12,450</h3>
                 <p>Monthly Spending</p>
@@ -54,14 +50,11 @@
             <div class="card">
                 <canvas id="chart"></canvas>
             </div>
-
         </div>
-
     </section>
 
     <!-- FEATURES -->
     <section class="features reveal">
-
         <div class="feature">
             <h3>Add Expenses Instantly</h3>
             <p>No hustle. Just log your expenses in seconds.</p>
@@ -81,7 +74,6 @@
             <h3>Import / Export</h3>
             <p>Seamlessly integrate with spreadsheets.</p>
         </div>
-
     </section>
 
     <!-- CTA -->
@@ -92,19 +84,16 @@
 
     <!-- FOOTER CTA -->
     <section class="footer-cta reveal">
-
         <h2>Take control of your finances with clarity and confidence.</h2>
         <p>Zenora helps you understand your money, prevent overspending, and build smarter financial habits.</p>
 
         <button id="openModal" class="cta-btn">Join Waitlist</button>
-
     </section>
 
     <hr class="footer-divider">
 
     <!-- FOOTER -->
     <footer class="footer reveal">
-
         <div class="footer-top">
             <p>© 2026 Zenora Fintech Private Limited</p>
 
@@ -130,26 +119,21 @@
             <span>in</span>
             <span>f</span>
         </div>
-
     </footer>
 
-    <!-- MODAL -->
+    <!-- MODAL (UPDATED PREMIUM VERSION) -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
 
             <span id="closeModal">&times;</span>
 
+            <div class="modal-icon">✉️</div>
+
             <h2>Request Access</h2>
             <p>Join early users building smarter financial habits.</p>
 
-            <input placeholder="Your Name">
-            <input placeholder="Email">
-
-            <select>
-                <option>Select Industry</option>
-                <option>Student</option>
-                <option>Working Professional</option>
-            </select>
+            <input id="name" placeholder="Enter your name">
+            <input id="email" placeholder="Your email address">
 
             <button onclick="saveUser()" class="cta-btn">Request Access</button>
 

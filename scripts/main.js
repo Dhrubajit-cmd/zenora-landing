@@ -1,28 +1,32 @@
 // =====================
-// MODAL HANDLING (FIXED)
+// MODAL HANDLING
 // =====================
 
-// Support MULTIPLE buttons
 const openBtns = document.querySelectorAll("#openModal");
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("closeModal");
 
+// Open modal
 openBtns.forEach(btn => {
     btn.onclick = () => {
         modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // disable scroll
     };
 });
 
+// Close modal
 if (closeBtn) {
     closeBtn.onclick = () => {
         modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
     };
 }
 
-// Close when clicking outside modal
+// Close when clicking outside
 window.onclick = (e) => {
     if (e.target === modal) {
         modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
     }
 };
 
@@ -40,7 +44,7 @@ if (glow) {
 }
 
 // =====================
-// CHART (SAFE INIT)
+// CHART
 // =====================
 
 const ctx = document.getElementById("chart");
@@ -69,7 +73,7 @@ if (ctx) {
 }
 
 // =====================
-// SCROLL REVEAL (IMPROVED)
+// SCROLL REVEAL
 // =====================
 
 const reveals = document.querySelectorAll(".reveal");
@@ -86,40 +90,56 @@ function revealOnScroll() {
     });
 }
 
-// Run once on load
 revealOnScroll();
-
-// Run on scroll
 window.addEventListener("scroll", revealOnScroll);
 
 // =====================
-// WAITLIST STORAGE
+// WAITLIST (REAL BACKEND)
 // =====================
 
-function saveUser() {
-    const inputs = document.querySelectorAll(".modal-content input");
+async function saveUser() {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
 
-    const name = inputs[0].value.trim();
-    const email = inputs[1].value.trim();
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
 
-    // Basic validation
     if (!name || !email) {
         alert("Please fill all fields");
         return;
     }
 
-    const user = { name, email };
+    const button = document.querySelector(".modal-content .cta-btn");
+    button.innerText = "Submitting...";
+    button.disabled = true;
 
-    let users = JSON.parse(localStorage.getItem("zenora_users")) || [];
-    users.push(user);
+    try {
+        const res = await fetch("/api/waitlist", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name, email })
+        });
 
-    localStorage.setItem("zenora_users", JSON.stringify(users));
+        if (!res.ok) {
+            throw new Error("Failed");
+        }
 
-    alert("You're on the waitlist 🚀");
+        alert("You're on the waitlist 🚀");
 
-    // Clear inputs
-    inputs.forEach(input => input.value = "");
+        // Clear inputs
+        nameInput.value = "";
+        emailInput.value = "";
 
-    // Close modal
-    modal.classList.add("hidden");
+        // Close modal
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+
+    } catch (err) {
+        alert("Something went wrong. Try again.");
+    }
+
+    button.innerText = "Request Access";
+    button.disabled = false;
 }
