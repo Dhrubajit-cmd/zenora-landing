@@ -89,7 +89,7 @@ Time: ${new Date().toLocaleString()}`
             <p style="color:#334155;">Hi ${name},</p>
 
             <p style="color:#475569;">
-                Thank you for joining the Zenora waitlist.
+                Thank you for joining Zenora.
             </p>
 
             <p style="color:#475569;">
