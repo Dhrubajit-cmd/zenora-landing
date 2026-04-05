@@ -63,3 +63,39 @@ Time: ${new Date().toLocaleString()}`
         res.status(500).json({ error: "Something failed" });
     }
 }
+
+// =====================
+// SEND EMAIL TO USER (CONFIRMATION)
+// =====================
+
+await transporter.sendMail({
+    from: `"Zenora" <${process.env.EMAIL_USER}>`,
+    to: email,
+    subject: "You're on the Zenora Waitlist 🚀",
+    html: `
+        <div style="font-family: Inter, sans-serif; padding: 20px;">
+            <h2 style="color: #1e3a8a;">Welcome to Zenora 🚀</h2>
+            
+            <p>Hi ${name},</p>
+            
+            <p>Thank you for joining the Zenora waitlist.</p>
+            
+            <p>
+                We're building a smarter way to manage your finances — 
+                with real-time insights, intelligent alerts, and seamless tracking.
+            </p>
+            
+            <p>
+                Our product is launching soon, and you'll be among the first to get access.
+            </p>
+            
+            <p style="margin-top: 20px;">
+                Thank you for your patience and support ❤️
+            </p>
+
+            <p>
+                — Team Zenora
+            </p>
+        </div>
+    `
+});
