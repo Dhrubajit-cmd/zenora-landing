@@ -67,18 +67,24 @@ Time: ${new Date().toLocaleString()}`
             to: email,
             subject: "You're on the Zenora Waitlist",
             html: `
-    <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:20px;">
+    <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:30px;">
         
-        <div style="max-width:600px; margin:auto; background:white; padding:30px; border-radius:12px;">
+        <div style="max-width:600px; margin:auto; background:white; padding:35px; border-radius:16px;">
             
-            <!-- HEADER WITH LOGO -->
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
-                <img src="https://zenoraapp.in/assets/logo.png" 
-                     style="width:28px; height:28px;">
-                <h2 style="color:#1e3a8a; margin:0;">
-                    Welcome to Zenora
-                </h2>
-            </div>
+            <!-- HEADER (FIXED ALIGNMENT) -->
+            <table style="margin-bottom:20px;" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="vertical-align:middle; padding-right:10px;">
+                        <img src="https://zenoraapp.in/assets/logo.png" 
+                             style="width:26px; height:26px; display:block;">
+                    </td>
+                    <td style="vertical-align:middle;">
+                        <h2 style="color:#1e3a8a; margin:0; font-size:22px;">
+                            Welcome to Zenora
+                        </h2>
+                    </td>
+                </tr>
+            </table>
 
             <p style="color:#334155;">Hi ${name},</p>
 
@@ -99,12 +105,18 @@ Time: ${new Date().toLocaleString()}`
                 Thank you for your patience and support.
             </p>
 
-            <!-- SIGNATURE WITH LOGO -->
-            <div style="margin-top:30px; display:flex; align-items:center; gap:8px;">
-                <span style="font-weight:600;">— Team Zenora</span>
-                <img src="https://zenoraapp.in/assets/logo.png" 
-                     style="width:20px; height:20px;">
-            </div>
+            <!-- SIGNATURE (FIXED SPACING) -->
+            <table style="margin-top:30px;" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="vertical-align:middle;">
+                        <span style="font-weight:600;">— Team Zenora</span>
+                    </td>
+                    <td style="vertical-align:middle; padding-left:8px;">
+                        <img src="https://zenoraapp.in/assets/logo.png" 
+                             style="width:18px; height:18px; display:block;">
+                    </td>
+                </tr>
+            </table>
 
         </div>
     </div>
