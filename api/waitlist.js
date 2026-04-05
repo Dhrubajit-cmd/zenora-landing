@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
     try {
         // =====================
-        // SAVE TO GOOGLE SHEETS (PRIMARY STORAGE)
+        // SAVE TO GOOGLE SHEETS
         // =====================
         try {
             const auth = new google.auth.GoogleAuth({
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
         }
 
         // =====================
-        // SEND EMAIL
+        // SETUP EMAIL
         // =====================
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -45,6 +45,9 @@ export default async function handler(req, res) {
             }
         });
 
+        // =====================
+        // EMAIL TO YOU
+        // =====================
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
@@ -56,6 +59,51 @@ Email: ${email}
 Time: ${new Date().toLocaleString()}`
         });
 
+        // =====================
+        // EMAIL TO USER ✅ (FIXED)
+        // =====================
+        await transporter.sendMail({
+            from: `"Zenora" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "You're on the Zenora Waitlist 🚀",
+            html: `
+            <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:20px;">
+                
+                <div style="max-width:600px; margin:auto; background:white; padding:30px; border-radius:12px;">
+                    
+                    <h2 style="color:#1e3a8a;">Welcome to Zenora 🚀</h2>
+
+                    <p>Hi ${name},</p>
+
+                    <p>Thank you for joining the Zenora waitlist.</p>
+
+                    <p>
+                        We're building a smarter way to manage your finances —
+                        with real-time insights and intelligent alerts.
+                    </p>
+
+                    <p>
+                        Our product is launching soon, and you'll be among the first to get access.
+                    </p>
+
+                    <p style="margin-top:20px;">
+                        Thank you for your patience ❤️
+                    </p>
+
+                    <p style="margin-top:25px; font-weight:600;">
+                        — Team Zenora
+                    </p>
+
+                    <div style="margin-top:20px; text-align:center;">
+                        <img src="https://zenoraapp.in/assets/logo.png" 
+                             style="width:120px;">
+                    </div>
+
+                </div>
+            </div>
+            `
+        });
+
         res.status(200).json({ success: true });
 
     } catch (err) {
@@ -63,52 +111,3 @@ Time: ${new Date().toLocaleString()}`
         res.status(500).json({ error: "Something failed" });
     }
 }
-
-// =====================
-// SEND EMAIL TO USER (CONFIRMATION)
-// =====================
-
-await transporter.sendMail({
-    from: `"Zenora" <${process.env.EMAIL_USER}>`,
-    to: email,
-    subject: "You're on the Zenora Waitlist 🚀",
-    html: `
-    <div style="font-family: Arial, sans-serif; background:#f8fafc; padding:20px;">
-        
-        <div style="max-width:600px; margin:auto; background:white; padding:30px; border-radius:12px;">
-            
-            <h2 style="color:#1e3a8a; margin-bottom:10px;">Welcome to Zenora 🚀</h2>
-
-            <p style="color:#334155;">Hi ${name},</p>
-
-            <p style="color:#475569;">
-                Thank you for joining the Zenora waitlist.
-            </p>
-
-            <p style="color:#475569;">
-                We're building a smarter way to manage your finances —
-                with real-time insights, intelligent alerts, and seamless tracking.
-            </p>
-
-            <p style="color:#475569;">
-                Our product is launching soon, and you'll be among the first to get access.
-            </p>
-
-            <p style="margin-top:20px; color:#475569;">
-                Thank you for your patience and support ❤️
-            </p>
-
-            <p style="margin-top:25px; font-weight:600;">
-                — Team Zenora
-            </p>
-
-            <div style="margin-top:20px; text-align:center;">
-                <img src="https://zenoraapp.in/assets/logo.png" 
-                     alt="Zenora Logo" 
-                     style="width:120px; opacity:0.9;">
-            </div>
-
-        </div>
-    </div>
-    `
-});
