@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import pool from "../lib/db.js";
+import { google } from "googleapis";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
@@ -7,20 +9,57 @@ export default async function handler(req, res) {
 
     const { name, email } = req.body;
 
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
+    try {
+        // =====================
+        // SAVE TO GOOGLE SHEETS (PRIMARY STORAGE)
+        // =====================
+        try {
+            const auth = new google.auth.GoogleAuth({
+                credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+                scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+            });
+
+            const sheets = google.sheets({ version: "v4", auth });
+
+            await sheets.spreadsheets.values.append({
+                spreadsheetId: process.env.SHEET_ID,
+                range: "Sheet1!A:C",
+                valueInputOption: "RAW",
+                requestBody: {
+                    values: [[name, email, new Date().toLocaleString()]],
+                },
+            });
+
+        } catch (sheetErr) {
+            console.error("Sheets Error:", sheetErr);
         }
-    });
 
-    await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
-        subject: "New Waitlist Signup 🚀",
-        text: `Name: ${name}\nEmail: ${email}`
-    });
+        // =====================
+        // SEND EMAIL
+        // =====================
+        const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }
+        });
 
-    res.status(200).json({ success: true });
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
+            subject: "New Waitlist Signup 🚀",
+            text: `New user joined Zenora 🚀
+
+Name: ${name}
+Email: ${email}
+Time: ${new Date().toLocaleString()}`
+        });
+
+        res.status(200).json({ success: true });
+
+    } catch (err) {
+        console.error("FINAL ERROR:", err);
+        res.status(500).json({ error: "Something failed" });
+    }
 }

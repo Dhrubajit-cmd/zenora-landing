@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Dhrubajit-cmd/zenora-landing#readme",
   "dependencies": {
-    "nodemailer": "^8.0.4"
+    "googleapis": "^171.4.0",
+    "nodemailer": "^8.0.4",
+    "pg": "^8.20.0"
   }
 }
