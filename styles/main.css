@@ -413,3 +413,7 @@ html {
         gap: 10px;
     }
 }
+
+section.hero h2 {
+    margin-bottom: 10px;
+}
