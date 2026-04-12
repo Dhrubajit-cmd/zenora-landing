@@ -24,7 +24,7 @@
 
         <div class="nav-right">
             <button class="blog-btn">Blog</button>
-            <button id="openModal" class="cta-btn">Join Waitlist</button>
+            <button id="openModal" class="cta-btn">Join Early Access</button>
         </div>
     </nav>
 
@@ -37,8 +37,13 @@
             and helps you take control — without manual effort.
         </p>
 
-        <button id="openModal" class="cta-btn">Join Waitlist</button>
+        <button id="openModal" class="cta-btn">Join Early Access</button>
 
+        <p style="margin-top:10px; font-size:14px; color:#64748b;">
+            🚀 Limited early users • No spam • Early feature access
+        </p>
+
+        <!-- DASHBOARD -->
         <div class="dashboard">
             <div class="card">
                 <h3>₹12,450</h3>
@@ -56,69 +61,94 @@
         </div>
     </section>
 
-    <!-- PROBLEM -->>
+    <!-- PROBLEM SECTION -->
     <section class="features reveal">
         <div class="feature">
-            <h3>Ever feel like money just disappears?</h3>
-            <p>You don’t remember where you spent it. And at the end of the month, your balance feels lower than
-                expected.</p>
+            <h3>Money just disappears</h3>
+            <p>You don’t remember where you spent it. At the end of the month, your balance feels lower than expected.
+            </p>
         </div>
 
         <div class="feature">
             <h3>Tracking doesn’t stick</h3>
-            <p>You try apps or spreadsheets… but stop after a few days because it’s too much effort.</p>
+            <p>You try apps or spreadsheets… but stop after a few days because it feels like too much effort.</p>
         </div>
 
         <div class="feature">
             <h3>Small expenses add up</h3>
-            <p>Food, subscriptions, random purchases — they don’t feel big, but they drain your money.</p>
+            <p>Food delivery, subscriptions, random spends — they don’t feel big, but they drain your money.</p>
         </div>
 
         <div class="feature">
             <h3>No clear visibility</h3>
-            <p>You know you’re overspending, but don’t know exactly where or how to fix it.</p>
+            <p>You know you're overspending, but don’t know exactly where or how to fix it.</p>
         </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- FEATURES (VALUE BASED) -->
     <section class="features reveal">
 
         <div class="feature">
             <h3>Automatic Expense Tracking</h3>
-            <p>No need to manually enter every expense. Zenora detects and organizes your spending for you.</p>
+            <p>No need to manually enter expenses. Zenora detects and organizes everything for you.</p>
         </div>
 
         <div class="feature">
             <h3>Smart Categorization</h3>
-            <p>Your expenses are grouped into categories like food, travel, and shopping automatically.</p>
+            <p>Your spending is automatically grouped into food, travel, shopping, and more.</p>
         </div>
 
         <div class="feature">
             <h3>Money Leak Detection</h3>
-            <p>Spot unusual spending instantly. Know where your money is going wrong before it's too late.</p>
+            <p>Spot unusual or excessive spending instantly before it becomes a bigger problem.</p>
         </div>
 
         <div class="feature">
             <h3>Subscription Detection</h3>
-            <p>Find all your recurring payments in one place and stop wasting money on things you forgot.</p>
+            <p>See all recurring payments and stop wasting money on things you forgot.</p>
         </div>
 
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="features reveal">
+        <div class="feature">
+            <h3>1. Connect</h3>
+            <p>Allow Zenora to access and analyze your spending data securely.</p>
+        </div>
+
+        <div class="feature">
+            <h3>2. Track Automatically</h3>
+            <p>All your expenses are detected and categorized in real-time.</p>
+        </div>
+
+        <div class="feature">
+            <h3>3. Get Insights</h3>
+            <p>Understand where your money is going and what needs fixing.</p>
+        </div>
+
+        <div class="feature">
+            <h3>4. Take Control</h3>
+            <p>Make better decisions and build smarter financial habits.</p>
+        </div>
     </section>
 
     <!-- CTA -->
     <section class="cta reveal">
         <h2>Take control of your money before it slips away</h2>
-        <button id="openModal" class="cta-btn">Join Waitlist</button>
+        <button id="openModal" class="cta-btn">Join Early Access</button>
     </section>
 
     <!-- FOOTER CTA -->
     <section class="footer-cta reveal">
-        <h2>Start understanding your money clearly.</h2>
+        <h2>Start understanding your money clearly</h2>
+
         <p>
             Zenora helps you see exactly where your money goes,
-            detect unnecessary spending, and build better financial habits — automatically.</p>
+            detect unnecessary spending, and build better financial habits — automatically.
+        </p>
 
-        <button id="openModal" class="cta-btn">Join Waitlist</button>
+        <button id="openModal" class="cta-btn">Join Early Access</button>
     </section>
 
     <hr class="footer-divider">
@@ -135,14 +165,11 @@
         </div>
 
         <p class="footer-desc">
-            Zenora is a financial intelligence platform designed to help users track, analyze, and optimize their
-            financial behavior.
-            We do not provide financial advice or act as a financial institution.
+            Built with privacy in mind. Your data is secure and encrypted.
         </p>
 
         <p class="footer-desc">
-            All data insights are for informational purposes only and should not be considered as professional financial
-            guidance.
+            Zenora provides insights, not financial advice.
         </p>
 
         <div class="footer-social">
@@ -152,7 +179,7 @@
         </div>
     </footer>
 
-    <!-- MODAL (UPDATED PREMIUM VERSION) -->
+    <!-- MODAL -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
 
@@ -160,13 +187,13 @@
 
             <div class="modal-icon">✉️</div>
 
-            <h2>Request Access</h2>
-            <p>Join early users building smarter financial habits.</p>
+            <h2>Get Early Access</h2>
+            <p>Be among the first users to take control of their finances.</p>
 
-            <input id="name" placeholder="Enter your name">
-            <input id="email" placeholder="Your email address">
+            <!-- 🔥 IMPORTANT CHANGE -->
+            <input id="email" placeholder="Enter your email">
 
-            <button onclick="saveUser()" class="cta-btn">Request Access</button>
+            <button onclick="saveUser()" class="cta-btn">Join Waitlist</button>
 
         </div>
     </div>
