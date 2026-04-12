@@ -7,7 +7,8 @@ export default async function handler(req, res) {
         return res.status(405).end();
     }
 
-    const { name, email } = req.body;
+    const { email } = req.body;
+    const name = email.split("@")[0];
 
     try {
         // =====================

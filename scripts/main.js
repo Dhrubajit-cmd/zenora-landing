@@ -98,14 +98,12 @@ window.addEventListener("scroll", revealOnScroll);
 // =====================
 
 async function saveUser() {
-    const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
 
-    const name = nameInput.value.trim();
     const email = emailInput.value.trim();
 
-    if (!name || !email) {
-        alert("Please fill all fields");
+    if (!email) {
+        alert("Please enter email");
         return;
     }
 
@@ -119,7 +117,10 @@ async function saveUser() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name, email })
+            body: JSON.stringify({
+                email,
+                name: "User" // fallback
+            })
         });
 
         if (!res.ok) {
@@ -128,8 +129,7 @@ async function saveUser() {
 
         alert("You're on the waitlist 🚀");
 
-        // Clear inputs
-        nameInput.value = "";
+        // Clear input
         emailInput.value = "";
 
         // Close modal
@@ -140,6 +140,6 @@ async function saveUser() {
         alert("Something went wrong. Try again.");
     }
 
-    button.innerText = "Request Access";
+    button.innerText = "Join Waitlist";
     button.disabled = false;
-}
+} 
